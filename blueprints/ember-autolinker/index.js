@@ -7,6 +7,6 @@ module.exports = {
   afterInstall() {
     return this.addBowerPackagesToProject([
       { name: 'Autolinker.js', target: '^1.4.3' }
-    ])
+    ]);
   }
 };
