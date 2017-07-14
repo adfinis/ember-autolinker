@@ -5,7 +5,15 @@ This addon wraps [Autolinker.js](https://github.com/gregjacobs/Autolinker.js) fo
 ## Usage
 
 ```Handlebars
-{{{autolink 'Your text containing URLs like google.com or http://www.something-else.xyz?whatever=you#like'}}}
+{{autolink 'Your text containing URLs like google.com or http://www.something-else.xyz?whatever=you#like'}}
+```
+
+## Options
+
+If your text contains HTML, you can disable HTML safety by passing `true` as second argument:
+
+```Handlebars
+{{autolink "fancy html<br>with <strong>emberjs.com</strong>" true}}
 ```
 
 ## Installation
