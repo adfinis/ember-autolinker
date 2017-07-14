@@ -1,17 +1,20 @@
 {
   "name": "ember-autolinker",
   "version": "0.0.3",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "ember-cli addon for using Autolinker.js in ember",
   "keywords": [
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Adfinis SyGroup",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adfinis-sygroup/ember-autolinker"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
