@@ -1,6 +1,12 @@
 # ember-autolinker
 
-This README outlines the details of collaborating on this Ember addon.
+This addon wraps [Autolinker.js](https://github.com/gregjacobs/Autolinker.js) for use in Ember apps.
+
+## Usage
+
+```Handlebars
+{{{autolink 'Your text containing URLs like google.com or http://www.something-else.xyz?whatever=you#like'}}}
+```
 
 ## Installation
 
