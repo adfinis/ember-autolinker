@@ -5,6 +5,8 @@ module.exports = {
   normalizeEntityName() {},
 
   afterInstall() {
-    this.addBowerPackageToProject({ name: 'Autolinker.js', target: '^1.4.3' })
+    return this.addBowerPackagesToProject([
+      { name: 'Autolinker.js', target: '^1.4.3' }
+    ])
   }
 };
