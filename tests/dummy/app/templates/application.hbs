@@ -1,3 +1,25 @@
-<p>{{autolink 'Your text containing URLs like google.com or http://www.something-else.xyz?whatever=you#like'}}</p>
+<h1 class="title">ember-autolinker</h1>
 
-<p>{{autolink "fancy html<br><strong>with emberjs.com</strong>" true}}</p>
+<table class="example">
+  <thead>
+    <tr>
+      <th>Input</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <label>
+          {{input type='checkbox' checked=ignoreEscape}}
+          Disable HTML escaping
+        </label>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>{{textarea value=value}}</td>
+      <td>{{autolink value ignoreEscape}}</td>
+    </tr>
+  </tbody>
+</table>
