@@ -18,9 +18,9 @@ If your text contains HTML, you can disable HTML safety by passing `true` as sec
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:adfinis-sygroup/ember-autolinker.git`
 * `cd ember-autolinker`
-* `npm install`
+* `yarn`
 
 ## Running
 
@@ -29,7 +29,7 @@ If your text contains HTML, you can disable HTML safety by passing `true` as sec
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
+* `yarn test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
