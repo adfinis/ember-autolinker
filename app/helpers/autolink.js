@@ -1,1 +1,1 @@
-export { default, autolink } from 'ember-autolinker/helpers/autolink';
+export { default, autolink } from 'ember-autolinker/helpers/autolink'

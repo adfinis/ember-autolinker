@@ -21,7 +21,6 @@ If your text contains HTML, you can disable HTML safety by passing `true` as sec
 * `git clone <repository-url>` this repository
 * `cd ember-autolinker`
 * `npm install`
-* `bower install`
 
 ## Running
 
