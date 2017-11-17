@@ -1,5 +1,8 @@
 # ember-autolinker
 
+[![Build Status](https://travis-ci.org/adfinis-sygroup/ember-autolinker.svg?branch=master)](https://travis-ci.org/adfinis-sygroup/ember-autolinker)
+[![codecov](https://codecov.io/gh/adfinis-sygroup/ember-autolinker/branch/master/graph/badge.svg)](https://codecov.io/gh/adfinis-sygroup/ember-autolinker)
+
 This addon wraps [Autolinker.js](https://github.com/gregjacobs/Autolinker.js) for use in Ember apps.
 
 ## Usage
