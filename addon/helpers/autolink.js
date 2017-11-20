@@ -1,10 +1,9 @@
+import Autolinker from 'autolinker';
+import { helper } from '@ember/component/helper';
+import { htmlSafe } from '@ember/string';
 import Ember from 'ember';
 
-const {
-  Handlebars: { Utils: { escapeExpression } },
-  Helper: { helper },
-  String: { htmlSafe }
-} = Ember;
+const { Handlebars: { Utils: { escapeExpression } } } = Ember;
 
 export function autolink([text, disableHtmlSafety]) {
   return htmlSafe(

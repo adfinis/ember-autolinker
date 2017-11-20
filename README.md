@@ -1,5 +1,8 @@
 # ember-autolinker
 
+[![Build Status](https://travis-ci.org/adfinis-sygroup/ember-autolinker.svg?branch=master)](https://travis-ci.org/adfinis-sygroup/ember-autolinker)
+[![codecov](https://codecov.io/gh/adfinis-sygroup/ember-autolinker/branch/master/graph/badge.svg)](https://codecov.io/gh/adfinis-sygroup/ember-autolinker)
+
 This addon wraps [Autolinker.js](https://github.com/gregjacobs/Autolinker.js) for use in Ember apps.
 
 ## Usage
@@ -18,10 +21,9 @@ If your text contains HTML, you can disable HTML safety by passing `true` as sec
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:adfinis-sygroup/ember-autolinker.git`
 * `cd ember-autolinker`
-* `npm install`
-* `bower install`
+* `yarn`
 
 ## Running
 
@@ -30,7 +32,7 @@ If your text contains HTML, you can disable HTML safety by passing `true` as sec
 
 ## Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
+* `yarn test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 

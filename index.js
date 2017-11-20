@@ -5,8 +5,10 @@ module.exports = {
   name: 'ember-autolinker',
 
   included: function(app) {
-    this._super.included(app)
+    this._super.included(app);
 
-    app.import('bower_components/Autolinker.js/dist/Autolinker.js')
+    app.import('node_modules/autolinker/dist/Autolinker.min.js', {
+      using: [{ transformation: 'amd', as: 'autolinker' }]
+    });
   }
 };
