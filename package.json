@@ -12,7 +12,10 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/adfinis-sygroup/ember-autolinker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adfinis-sygroup/ember-autolinker"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
