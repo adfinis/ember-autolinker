@@ -19,6 +19,14 @@ If your text contains HTML, you can disable HTML safety by passing `true` as sec
 {{autolink "fancy html<br>with <strong>emberjs.com</strong>" true}}
 ```
 
+To specify autlinker options you can use named arguments:
+
+```Handlebars
+{{autolink "fancy html<br>with <strong>emberjs.com</strong>" newWindow=false}}
+```
+
+For a full list of autolinker options [see here](https://github.com/gregjacobs/Autolinker.js#options).
+
 ## Installation
 
 * `git clone git@github.com:adfinis-sygroup/ember-autolinker.git`

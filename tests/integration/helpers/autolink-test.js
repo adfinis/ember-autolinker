@@ -1,46 +1,55 @@
-import { expect } from 'chai';
-import { describe, it } from 'mocha';
-import { setupComponentTest } from 'ember-mocha';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { find, findAll } from 'ember-native-dom-helpers';
 
-describe('Integration | Helper | autolink', function() {
-  setupComponentTest('autolink', {
-    integration: true
-  });
+module('Integration | Helper | autolink', function(hooks) {
+  setupRenderingTest(hooks);
 
-  it('creates links with escaping', function() {
+  test('creates links with escaping', async function(assert) {
     this.set(
       'text',
       'Hello test, let me google that for you: http://lmgtfy.com/?q=ember+testing'
     );
 
-    this.render(hbs`{{autolink text}}`);
+    await render(hbs`{{autolink text}}`);
 
-    expect(findAll('a')).to.have.length(1);
-
-    expect(find('a').href).to.equal('http://lmgtfy.com/?q=ember+testing');
+    assert.dom('a').exists();
+    assert.dom('a').hasAttribute('href', 'http://lmgtfy.com/?q=ember+testing');
   });
 
-  it('creates links without escaping', function() {
+  test('creates links without escaping', async function(assert) {
     this.set(
       'text',
       'Hello test, let me <strong>google</strong> that for you: http://lmgtfy.com/?q=ember+testing'
     );
 
-    this.render(hbs`{{autolink text true}}`);
+    await render(hbs`{{autolink text true}}`);
 
-    expect(findAll('strong')).to.have.length(1);
-    expect(findAll('a')).to.have.length(1);
-
-    expect(find('a').href).to.equal('http://lmgtfy.com/?q=ember+testing');
+    assert.dom('strong').exists();
+    assert.dom('a').exists();
+    assert.dom('a').hasAttribute('href', 'http://lmgtfy.com/?q=ember+testing');
   });
 
-  it('creates multiple links', function() {
+  test('creates multiple links', async function(assert) {
     this.set('text', 'https://google.com is way better than https://bing.com!');
 
-    this.render(hbs`{{autolink text}}`);
+    await render(hbs`{{autolink text}}`);
 
-    expect(findAll('a')).to.have.length(2);
+    assert.dom('a').exists({ count: 2 });
+  });
+
+  test('set autolinker options', async function(assert) {
+    this.set(
+      'text',
+      'Hello test, let me google that for you: http://lmgtfy.com/?q=ember+testing'
+    );
+
+    await render(hbs`{{autolink text newWindow=false}}`);
+
+    assert.dom('a').exists();
+    assert.dom('a').hasAttribute('href', 'http://lmgtfy.com/?q=ember+testing');
+    assert.dom('a').doesNotHaveAttribute('target');
+    assert.dom('a').doesNotHaveAttribute('rel');
   });
 });

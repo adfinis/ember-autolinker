@@ -1,52 +1,32 @@
-import { describe, it, beforeEach, afterEach } from 'mocha';
-import { expect } from 'chai';
-import startApp from '../helpers/start-app';
-import destroyApp from '../helpers/destroy-app';
-import { findAll, fillIn } from 'ember-native-dom-helpers';
+import { module, test } from 'qunit';
+import { click, visit, fillIn } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
-describe('Acceptance | autolink', function() {
-  let application;
+module('Acceptance | autolink', function(hooks) {
+  setupApplicationTest(hooks);
 
-  beforeEach(function() {
-    application = startApp();
+  test('can use autolink helper with escaping', async function(assert) {
+    await visit('/');
+
+    await fillIn(
+      '.example textarea',
+      'Your text containing URLs like google.com or http://www.something-else.xyz?whatever=you#like'
+    );
+
+    assert.dom('.example a').exists({ count: 2 });
   });
 
-  afterEach(function() {
-    destroyApp(application);
-  });
+  test('can use autolink helper without escaping', async function(assert) {
+    await visit('/');
 
-  it('can use autolink helper with escaping', function() {
-    visit('/');
+    await click('.example input');
 
-    andThen(() => {
-      fillIn(
-        '.example textarea',
-        'Your text containing URLs like google.com or http://www.something-else.xyz?whatever=you#like'
-      );
-    });
+    await fillIn(
+      '.example textarea',
+      'fancy html<br><strong>with emberjs.com</strong>'
+    );
 
-    andThen(() => {
-      expect(findAll('.example a')).to.have.length(2);
-    });
-  });
-
-  it('can use autolink helper without escaping', function() {
-    visit('/');
-
-    andThen(() => {
-      click('.example input');
-    });
-
-    andThen(() => {
-      fillIn(
-        '.example textarea',
-        'fancy html<br><strong>with emberjs.com</strong>'
-      );
-    });
-
-    andThen(() => {
-      expect(findAll('.example strong')).to.have.length(1);
-      expect(findAll('.example a')).to.have.length(1);
-    });
+    assert.dom('.example strong').exists();
+    assert.dom('.example a').exists();
   });
 });

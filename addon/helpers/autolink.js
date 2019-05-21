@@ -5,9 +5,12 @@ import Ember from 'ember';
 
 const { Handlebars: { Utils: { escapeExpression } } } = Ember;
 
-export function autolink([text, disableHtmlSafety]) {
+export function autolink([text, disableHtmlSafety], autolinkerOptions) {
   return htmlSafe(
-    Autolinker.link(disableHtmlSafety ? text : escapeExpression(text))
+    Autolinker.link(
+      disableHtmlSafety ? text : escapeExpression(text),
+      autolinkerOptions
+    )
   );
 }
 
